@@ -1,0 +1,33 @@
+/** Build plugins. */
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id 'com.sidneysimmons.gradle-plugin-external-properties' version '0.0.3'
+}
+apply plugin: 'io.spring.dependency-management'
+
+/** Repositories. */
+repositories {
+    mavenCentral()
+}
+
+/** Project settings. */
+group = 'com.sidneysimmons.kiwi'
+version = '0.0.1'
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+/** Dependencies. */
+dependencies {
+    // Project
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.1.7.RELEASE'
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf:2.1.7.RELEASE"
+    
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.1.7.RELEASE'
+    testImplementation 'org.mockito:mockito-core:2.28.2'
+}
