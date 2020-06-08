@@ -1,6 +1,7 @@
-package com.sidneysimmons.kiwi.home;
+package com.sidneysimmons.kiwi.home.controller;
 
 import com.sidneysimmons.kiwi.ViewNames;
+import com.sidneysimmons.kiwi.home.service.HomeService;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
