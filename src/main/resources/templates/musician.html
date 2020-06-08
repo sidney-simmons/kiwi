@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<div th:insert="head" th:with="title=${'Software Engineer'}"></div>
+<th:block th:insert="head" th:with="title=${'Musician'}"></th:block>
 </head>
 <body>
-    <th:block th:insert="nav" th:with="currentPage=${'software-engineer'}"></th:block>
+    <th:block th:insert="nav" th:with="currentPage=${'musician'}"></th:block>
 
     <main role="main" class="container-fluid">
         <div class="row">
-            <tr th:each="repository : ${repositories}">
-                <div class="col-sm-3">
-                    <div class="repository-container" th:text="${repository.name}"></div>
-                </div>
-            </tr>
+            hi!
         </div>
     </main>
 
