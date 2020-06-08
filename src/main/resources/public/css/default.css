@@ -5,3 +5,10 @@
 .underline, .underline:hover {
     text-decoration: underline;
 }
+
+.repository-container {
+    background: #eeeeee;
+    padding: 5px;
+    border: 1px solid #000000;
+    margin: 5px;
+}

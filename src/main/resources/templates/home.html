@@ -33,7 +33,9 @@
     <main role="main" class="container-fluid">
         <div class="row">
             <tr th:each="repository : ${repositories}">
-                <div class="col-sm" th:text="${repository.name}"></div>
+                <div class="col-sm-3">
+                    <div class="repository-container" th:text="${repository.name}"></div>
+                </div>
             </tr>
         </div>
     </main>
