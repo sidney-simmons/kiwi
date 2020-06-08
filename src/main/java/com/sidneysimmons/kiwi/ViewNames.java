@@ -7,7 +7,7 @@ package com.sidneysimmons.kiwi;
  */
 public class ViewNames {
 
-    public static final String HOME = "home";
+    public static final String SOFTWARE_ENGINEER = "software-engineer";
 
     private ViewNames() {
         // No need to instantiate this class
