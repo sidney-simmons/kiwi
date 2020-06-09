@@ -15,6 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "")
 public class HomeController {
 
+    /**
+     * Redirect to the software engineer page when a user hits the home page.
+     * 
+     * @param response the servlet response
+     * @throws IOException thrown if there is a problem sending the redirect
+     */
     @GetMapping(value = "")
     public void home(HttpServletResponse response) throws IOException {
         response.sendRedirect("/software-engineer");

@@ -26,6 +26,13 @@ public class GitHubApiDao {
     @Resource(name = "restTemplate")
     private RestTemplate restTemplate;
 
+    /**
+     * Get repositories for a given user.
+     * 
+     * @param username the username
+     * @return the list of repositories
+     * @throws GitHubDaoException thrown if there is a problem talking to the GitHub API
+     */
     public List<GitHubRepository> getRepositoriesForUser(String username) throws GitHubDaoException {
         try {
             ResponseEntity<List<GitHubRepository>> response = restTemplate.exchange(resolveGitHubUrl("/users/" + username + "/repos"), HttpMethod.GET, null,
@@ -37,6 +44,12 @@ public class GitHubApiDao {
         }
     }
 
+    /**
+     * Resolve the GitHub API URL from properties.
+     * 
+     * @param contextPath a specific context path to append to the base URL
+     * @return the full URL
+     */
     private String resolveGitHubUrl(String contextPath) {
         return propertyService.getProperty("github.base-url") + contextPath;
     }

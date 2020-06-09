@@ -2,7 +2,7 @@ package com.sidneysimmons.kiwi.github.service;
 
 import com.sidneysimmons.kiwi.github.dao.GitHubApiDao;
 import com.sidneysimmons.kiwi.github.domain.GitHubRepository;
-import com.sidneysimmons.kiwi.github.domain.RepositoryDto;
+import com.sidneysimmons.kiwi.github.domain.GitHubRepositoryDto;
 import com.sidneysimmons.kiwi.github.exception.GitHubDaoException;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,17 +24,17 @@ public class GitHubService {
     private GitHubApiDao gitHubApiDao;
 
     /**
-     * Get a list of repositories for a given username. This is cached.
+     * Get a list of repositories for a given user. This is cached.
      * 
      * @param username the username
      * @return the list of repositories
      * @throws GitHubDaoException thrown if there is a problem talking to the GitHub API
      */
     @CacheResult(cacheName = "gitHubCache")
-    public List<RepositoryDto> getRepositoriesForUser(String username) throws GitHubDaoException {
+    public List<GitHubRepositoryDto> getRepositoriesForUser(String username) throws GitHubDaoException {
         log.info("Finding repositories for username = " + username);
         List<GitHubRepository> repositories = gitHubApiDao.getRepositoriesForUser(username);
-        List<RepositoryDto> repositoryDtos = new ArrayList<>();
+        List<GitHubRepositoryDto> repositoryDtos = new ArrayList<>();
         for (GitHubRepository repository : repositories) {
             repositoryDtos.add(buildRepositoryDto(repository));
         }
@@ -48,8 +48,8 @@ public class GitHubService {
      * @param repository a repository
      * @return a repository DTO
      */
-    private RepositoryDto buildRepositoryDto(GitHubRepository repository) {
-        RepositoryDto repositoryDto = new RepositoryDto();
+    private GitHubRepositoryDto buildRepositoryDto(GitHubRepository repository) {
+        GitHubRepositoryDto repositoryDto = new GitHubRepositoryDto();
         repositoryDto.setName(repository.getName());
         return repositoryDto;
     }

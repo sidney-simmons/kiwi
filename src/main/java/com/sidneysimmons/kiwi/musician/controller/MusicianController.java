@@ -14,6 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/musician")
 public class MusicianController {
 
+    /**
+     * Return the musician page.
+     * 
+     * @return the template name
+     */
     @GetMapping(value = "")
     public String musician() {
         return ViewNames.MUSICIAN;

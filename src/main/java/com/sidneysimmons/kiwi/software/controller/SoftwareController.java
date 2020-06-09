@@ -1,7 +1,7 @@
 package com.sidneysimmons.kiwi.software.controller;
 
 import com.sidneysimmons.kiwi.ViewNames;
-import com.sidneysimmons.kiwi.github.domain.RepositoryDto;
+import com.sidneysimmons.kiwi.github.domain.GitHubRepositoryDto;
 import com.sidneysimmons.kiwi.github.exception.GitHubDaoException;
 import com.sidneysimmons.kiwi.github.service.GitHubService;
 import com.sidneysimmons.kiwi.property.service.PropertyService;
@@ -39,7 +39,7 @@ public class SoftwareController {
     @GetMapping(value = "")
     public String softwareEngineer(Model model) {
         String username = propertyService.getProperty("github.username");
-        List<RepositoryDto> repositoryDtos = null;
+        List<GitHubRepositoryDto> repositoryDtos = null;
         try {
             repositoryDtos = gitHubService.getRepositoriesForUser(username);
         } catch (GitHubDaoException e) {

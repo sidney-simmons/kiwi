@@ -1,5 +1,10 @@
 package com.sidneysimmons.kiwi.github.exception;
 
+/**
+ * GitHub DAO exception.
+ * 
+ * @author Sidney Simmons
+ */
 public class GitHubDaoException extends Exception {
 
     private static final long serialVersionUID = 1L;
