@@ -7,6 +7,7 @@ import com.sidneysimmons.kiwi.github.exception.GitHubDaoException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
+import javax.cache.annotation.CacheResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -22,20 +23,31 @@ public class GitHubService {
     @Resource(name = "gitHubApiDao")
     private GitHubApiDao gitHubApiDao;
 
-    public List<RepositoryDto> getRepositoriesForUser(String username) {
+    /**
+     * Get a list of repositories for a given username. This is cached.
+     * 
+     * @param username the username
+     * @return the list of repositories
+     * @throws GitHubDaoException thrown if there is a problem talking to the GitHub API
+     */
+    @CacheResult(cacheName = "gitHubCache")
+    public List<RepositoryDto> getRepositoriesForUser(String username) throws GitHubDaoException {
         log.info("Finding repositories for username = " + username);
+        List<GitHubRepository> repositories = gitHubApiDao.getRepositoriesForUser(username);
         List<RepositoryDto> repositoryDtos = new ArrayList<>();
-        try {
-            List<GitHubRepository> repositories = gitHubApiDao.getRepositoriesForUser(username);
-            for (GitHubRepository repository : repositories) {
-                repositoryDtos.add(buildRepositoryDto(repository));
-            }
-        } catch (GitHubDaoException e) {
-            log.error("Cannot get repositories for user. Returning empty list.", e);
+        for (GitHubRepository repository : repositories) {
+            repositoryDtos.add(buildRepositoryDto(repository));
         }
         return repositoryDtos;
+
     }
 
+    /**
+     * Build a repository DTO for the given repository.
+     * 
+     * @param repository a repository
+     * @return a repository DTO
+     */
     private RepositoryDto buildRepositoryDto(GitHubRepository repository) {
         RepositoryDto repositoryDto = new RepositoryDto();
         repositoryDto.setName(repository.getName());
