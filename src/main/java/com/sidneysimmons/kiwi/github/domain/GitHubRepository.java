@@ -1,5 +1,6 @@
 package com.sidneysimmons.kiwi.github.domain;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Data;
 
 /**
@@ -11,5 +12,12 @@ import lombok.Data;
 public class GitHubRepository {
 
     private String name;
+    private String description;
+
+    @JsonAlias("html_url")
+    private String htmlUrl;
+
+    @JsonAlias("updated_at")
+    private String updatedAt;
 
 }

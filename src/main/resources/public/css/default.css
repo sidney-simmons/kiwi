@@ -6,9 +6,18 @@
     text-decoration: underline;
 }
 
+nav {
+    margin-bottom: 15px;
+}
+
+.repositories-title {
+    margin: 0px 15px 15px 15px;
+}
+
 .repository-container {
-    background: #eeeeee;
-    padding: 5px;
-    border: 1px solid #000000;
-    margin: 5px;
+    margin-bottom: 20px;
+}
+
+.repository-container .card-footer {
+    border-top: 0;
 }

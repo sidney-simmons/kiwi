@@ -36,22 +36,10 @@ public class GitHubService {
         List<GitHubRepository> repositories = gitHubApiDao.getRepositoriesForUser(username);
         List<GitHubRepositoryDto> repositoryDtos = new ArrayList<>();
         for (GitHubRepository repository : repositories) {
-            repositoryDtos.add(buildRepositoryDto(repository));
+            repositoryDtos.add(new GitHubRepositoryDto(repository));
         }
         return repositoryDtos;
 
-    }
-
-    /**
-     * Build a repository DTO for the given repository.
-     * 
-     * @param repository a repository
-     * @return a repository DTO
-     */
-    private GitHubRepositoryDto buildRepositoryDto(GitHubRepository repository) {
-        GitHubRepositoryDto repositoryDto = new GitHubRepositoryDto();
-        repositoryDto.setName(repository.getName());
-        return repositoryDto;
     }
 
 }
