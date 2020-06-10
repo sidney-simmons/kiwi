@@ -1,5 +1,5 @@
 # Jave base image
-FROM openjdk:12-alpine
+FROM openjdk:10.0.1-10-slim
 
 # Maintainer
 MAINTAINER Sidney Simmons <sas.simm@gmail.com>
