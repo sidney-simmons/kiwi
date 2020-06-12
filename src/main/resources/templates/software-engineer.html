@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:with="currentPage=${'software-engineer'}">
 <head>
-<th:block th:insert="head" th:with="title=${'Software Engineer'}"></th:block>
+<th:block th:insert="head"></th:block>
 </head>
 <body>
-    <th:block th:insert="nav" th:with="currentPage=${'software-engineer'}"></th:block>
+    <th:block th:insert="nav"></th:block>
 
     <main role="main" class="container-fluid">
         <div class="row">
