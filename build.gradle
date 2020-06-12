@@ -31,5 +31,11 @@ dependencies {
     testImplementation "org.mockito:mockito-core:2.28.2"
 }
 
+bootJar {
+    manifest {
+        attributes "Implementation-Version": project.version
+    }
+}
+
 dockerComposeUp.dependsOn dockerComposeBuild
 dockerComposeBuild.dependsOn build

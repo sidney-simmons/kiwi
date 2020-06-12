@@ -21,12 +21,15 @@
                         <li class="list-group-item"><a th:href="@{${repository.htmlUrl}}" th:text="${repository.htmlUrl}"></a></li>
                     </ul>
                     <div class="card-footer">
-                        <small class="text-muted js-repository-updated-at" th:attr="data-updated-at=${repository.updatedAt}">...</small>
+                        <small class="text-muted js-repository-updated-at" th:attr="data-updated-at=${repository.updatedAt}"
+                            th:text="#{common.ellipsis}"></small>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <th:block th:insert="footer"></th:block>
 
     <th:block th:insert="javascript"></th:block>
     <script th:src="@{/js/software-engineer.js}" crossorigin="anonymous"></script>

@@ -14,6 +14,14 @@ nav {
     margin-bottom: 15px;
 }
 
+footer {
+    text-align: center;
+    font-family: monospace;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+
 .repositories-title {
     margin: 0px 15px 15px 15px;
 }
