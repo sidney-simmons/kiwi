@@ -1,13 +1,25 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + #{common.google-analytics.tracking-id}}" async="true"></script>
+<script th:inline="text">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "[[#{common.google-analytics.tracking-id}]]");
+</script>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
 <meta name="description" th:attr="content=#{${currentPage + '.page-description'}}">
 <meta name="keywords" th:attr="content=#{${currentPage + '.page-keywords'}}">
 <meta name="author" th:attr="content=#{common.author}">
+<title th:text="#{${currentPage + '.page-title'}}"></title>
+
 <link rel="apple-touch-icon" sizes="180x180" th:href="@{/img/favicon/apple-touch-icon.png}">
 <link rel="icon" type="image/png" sizes="32x32" th:href="@{/img/favicon/favicon-32x32.png}">
 <link rel="icon" type="image/png" sizes="16x16" th:href="@{/img/favicon/favicon-16x16.png}">
 <link rel="manifest" th:href="@{/img/favicon/site.webmanifest}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
 <link rel="stylesheet" th:href="@{/css/default.css}">
-<title th:text="#{${currentPage + '.page-title'}}"></title>
