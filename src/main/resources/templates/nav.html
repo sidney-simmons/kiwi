@@ -7,13 +7,16 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item" th:classappend="${currentPage == 'software-engineer'} ? active : ''"><a class="nav-link"
-                href="/software-engineer" th:text="#{${currentPage + '.nav-label'}}"></a></li>
+                href="/software-engineer" th:text="#{software-engineer.nav-label}"></a></li>
 
             <!--/*-->
             <!-- /* Disable the musician link until that section of the site is ready. */ -->
             <li class="nav-item" th:classappend="${currentPage == 'musician'} ? active : ''"><a class="nav-link" href="/musician"
-                th:text="#{${currentPage + '.nav-label'}}"></a></li>
+                th:text="#{musician.nav-label}"></a></li>
             <!--*/-->
+
+            <li class="nav-item" th:classappend="${currentPage == 'contact'} ? active : ''"><a class="nav-link" href="/contact"
+                th:text="#{contact.nav-label}"></a></li>
 
         </ul>
         <ul class="navbar-nav">

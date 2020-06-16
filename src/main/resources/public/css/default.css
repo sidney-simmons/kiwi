@@ -10,6 +10,10 @@ body {
     text-decoration: underline;
 }
 
+.break-all {
+    word-break: break-all;
+}
+
 nav {
     margin-bottom: 15px;
 }
@@ -22,7 +26,11 @@ footer {
     margin-bottom: 15px;
 }
 
-.repositories-title {
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.section-title {
     margin: 0px 15px 15px 15px;
 }
 
@@ -32,4 +40,17 @@ footer {
 
 .repository-container .card-footer {
     border-top: 0;
+}
+
+.github-profile-pic {
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid #888888;
+}
+
+.contact-option-image {
+    float: left; /* Prevents the text on the right side from wrapping underneath the image. */
+    max-height: 25px;
+    padding-right: 10px;
+    max-height: 25px;
 }

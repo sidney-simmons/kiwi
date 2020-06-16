@@ -8,7 +8,7 @@ MAINTAINER Sidney Simmons <sas.simm@gmail.com>
 EXPOSE 8080
 
 # The application's jar file
-ARG JAR_FILE=build/libs/kiwi-0.0.6.jar
+ARG JAR_FILE=build/libs/kiwi-0.0.7.jar
 
 # Add the jar to the container
 COPY ${JAR_FILE} kiwi.jar
