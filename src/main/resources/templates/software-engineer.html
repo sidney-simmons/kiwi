@@ -32,6 +32,6 @@
     <th:block th:insert="footer"></th:block>
 
     <th:block th:insert="javascript"></th:block>
-    <script th:src="@{${@environmentService.appendVersion('/js/software-engineer.js')}}" crossorigin="anonymous"></script>
+    <script th:src="@{${@th.appendVersion('/js/software-engineer.js')}}" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -28,21 +28,6 @@ public class EnvironmentService {
     }
 
     /**
-     * Append the application version to the end of the given URL. Meant to be used for static resource
-     * versioning.
-     * 
-     * @param url a URL
-     * @return the new URL
-     */
-    public String appendVersion(String url) {
-        if (url.contains("?")) {
-            return url.concat("&v=" + applicationEnvironment.getImplementationVersion());
-        } else {
-            return url.concat("?v=" + applicationEnvironment.getImplementationVersion());
-        }
-    }
-
-    /**
      * Configure the application environment.
      */
     @PostConstruct
