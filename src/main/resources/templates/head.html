@@ -18,9 +18,9 @@
 <meta name="author" th:attr="content=#{common.author-name}">
 <title th:text="#{${currentPage + '.page-title'}}"></title>
 
-<link rel="apple-touch-icon" sizes="180x180" th:href="@{/img/favicon/apple-touch-icon.png}">
-<link rel="icon" type="image/png" sizes="32x32" th:href="@{/img/favicon/favicon-32x32.png}">
-<link rel="icon" type="image/png" sizes="16x16" th:href="@{/img/favicon/favicon-16x16.png}">
-<link rel="manifest" th:href="@{/img/favicon/site.webmanifest}">
+<link rel="apple-touch-icon" sizes="180x180" th:href="@{${@environmentService.appendVersion('/img/favicon/apple-touch-icon.png')}}">
+<link rel="icon" type="image/png" sizes="32x32" th:href="@{${@environmentService.appendVersion('/img/favicon/favicon-32x32.png')}}">
+<link rel="icon" type="image/png" sizes="16x16" th:href="@{${@environmentService.appendVersion('/img/favicon/favicon-16x16.png')}}">
+<link rel="manifest" th:href="@{${@environmentService.appendVersion('/img/favicon/site.webmanifest')}}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" th:href="@{/css/default.css}">
+<link rel="stylesheet" th:href="@{${@environmentService.appendVersion('/css/default.css')}}">

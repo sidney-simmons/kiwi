@@ -13,16 +13,31 @@
             </div>
             <div class="col-12 col-sm-7 col-md-7 col-lg-7 col-xl-9 margin-bottom">
                 <ul class="list-group">
-                    <li class="list-group-item"><img th:src="@{img/baseline_email_black_18dp.png}" class="contact-option-image" /> <a
-                        th:href="'mailto:' + #{common.author-email-address}" th:text="#{common.author-email-address}"></a></li>
-                    <li class="list-group-item"><img th:src="@{img/baseline_call_black_18dp.png}" class="contact-option-image" /><a
-                        th:href="'tel:+' + #{common.author-phone-number-key}" th:text="#{common.author-phone-number-value}"></a></li>
-                    <li class="list-group-item"><img th:src="@{img/baseline_place_black_18dp.png}" class="contact-option-image" /> <th:block
-                            th:text="#{common.author-location}"></th:block></li>
-                    <li class="list-group-item"><img th:src="@{img/baseline_code_black_18dp.png}" class="contact-option-image" /><a
-                        th:href="@{${githubProfileUrl}}" th:text="${githubProfileUrl}" class="break-all"></a></li>
-                    <li class="list-group-item"><img th:src="@{img/baseline_work_black_18dp.png}" class="contact-option-image" /><a
-                        th:href="@{${linkedInProfileUrl}}" th:text="${linkedInProfileUrl}" class="break-all"></a></li>
+                    <li class="list-group-item"><img
+                        th:src="@{${@environmentService.appendVersion('img/baseline_email_black_18dp.png')}}" class="contact-option-image" />
+                        <div class="contact-option-text">
+                            <a th:href="'mailto:' + #{common.author-email-address}" th:text="#{common.author-email-address}"></a>
+                        </div></li>
+                    <li class="list-group-item"><img
+                        th:src="@{${@environmentService.appendVersion('img/baseline_call_black_18dp.png')}}" class="contact-option-image" />
+                        <div class="contact-option-text">
+                            <a th:href="'tel:+' + #{common.author-phone-number-key}" th:text="#{common.author-phone-number-value}"></a>
+                        </div></li>
+                    <li class="list-group-item"><img
+                        th:src="@{${@environmentService.appendVersion('img/baseline_place_black_18dp.png')}}" class="contact-option-image" />
+                        <div class="contact-option-text">
+                            <th:block th:text="#{common.author-location}"></th:block>
+                        </div></li>
+                    <li class="list-group-item"><img
+                        th:src="@{${@environmentService.appendVersion('img/baseline_code_black_18dp.png')}}" class="contact-option-image" />
+                        <div class="contact-option-text">
+                            <a th:href="@{${githubProfileUrl}}" th:text="${githubProfileUrl}" class="break-all"></a>
+                        </div></li>
+                    <li class="list-group-item"><img
+                        th:src="@{${@environmentService.appendVersion('img/baseline_work_black_18dp.png')}}" class="contact-option-image" />
+                        <div class="contact-option-text">
+                            <a th:href="@{${linkedInProfileUrl}}" th:text="${linkedInProfileUrl}" class="break-all"></a>
+                        </div></li>
                 </ul>
             </div>
             <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-3 margin-bottom">
