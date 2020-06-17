@@ -1,4 +1,4 @@
-package com.sidneysimmons.kiwi.home.controller;
+package com.sidneysimmons.kiwi.controller;
 
 import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;

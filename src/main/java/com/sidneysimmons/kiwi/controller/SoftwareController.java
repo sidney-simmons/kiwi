@@ -1,10 +1,10 @@
-package com.sidneysimmons.kiwi.software.controller;
+package com.sidneysimmons.kiwi.controller;
 
-import com.sidneysimmons.kiwi.ViewNames;
-import com.sidneysimmons.kiwi.github.domain.GitHubRepositoryDto;
-import com.sidneysimmons.kiwi.github.exception.GitHubDaoException;
-import com.sidneysimmons.kiwi.github.service.GitHubService;
-import com.sidneysimmons.kiwi.property.service.PropertyService;
+import com.sidneysimmons.kiwi.controller.domain.ViewNames;
+import com.sidneysimmons.kiwi.dao.exception.GitHubDaoException;
+import com.sidneysimmons.kiwi.service.GitHubService;
+import com.sidneysimmons.kiwi.service.PropertyService;
+import com.sidneysimmons.kiwi.service.domain.GitHubRepositoryDto;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;

@@ -1,8 +1,8 @@
-package com.sidneysimmons.kiwi.github.dao;
+package com.sidneysimmons.kiwi.dao;
 
-import com.sidneysimmons.kiwi.github.domain.GitHubRepository;
-import com.sidneysimmons.kiwi.github.exception.GitHubDaoException;
-import com.sidneysimmons.kiwi.property.service.PropertyService;
+import com.sidneysimmons.kiwi.dao.domain.GitHubRepository;
+import com.sidneysimmons.kiwi.dao.exception.GitHubDaoException;
+import com.sidneysimmons.kiwi.service.PropertyService;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.core.ParameterizedTypeReference;

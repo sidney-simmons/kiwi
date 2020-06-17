@@ -1,4 +1,4 @@
-package com.sidneysimmons.kiwi.property.service;
+package com.sidneysimmons.kiwi.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;

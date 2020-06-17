@@ -1,4 +1,4 @@
-package com.sidneysimmons.kiwi;
+package com.sidneysimmons.kiwi.controller.domain;
 
 /**
  * Class to hold view names.

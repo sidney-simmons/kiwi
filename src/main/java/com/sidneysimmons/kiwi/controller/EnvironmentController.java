@@ -1,7 +1,7 @@
-package com.sidneysimmons.kiwi.environment.controller;
+package com.sidneysimmons.kiwi.controller;
 
-import com.sidneysimmons.kiwi.environment.domain.ApplicationEnvironment;
-import com.sidneysimmons.kiwi.environment.service.EnvironmentService;
+import com.sidneysimmons.kiwi.service.EnvironmentService;
+import com.sidneysimmons.kiwi.service.domain.ApplicationEnvironment;
 import javax.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

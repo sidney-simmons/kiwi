@@ -1,7 +1,7 @@
-package com.sidneysimmons.kiwi.contact.controller;
+package com.sidneysimmons.kiwi.controller;
 
-import com.sidneysimmons.kiwi.ViewNames;
-import com.sidneysimmons.kiwi.property.service.PropertyService;
+import com.sidneysimmons.kiwi.controller.domain.ViewNames;
+import com.sidneysimmons.kiwi.service.PropertyService;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

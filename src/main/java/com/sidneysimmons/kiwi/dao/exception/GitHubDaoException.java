@@ -1,4 +1,4 @@
-package com.sidneysimmons.kiwi.github.exception;
+package com.sidneysimmons.kiwi.dao.exception;
 
 /**
  * GitHub DAO exception.

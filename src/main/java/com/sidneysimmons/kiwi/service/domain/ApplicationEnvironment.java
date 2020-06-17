@@ -1,4 +1,4 @@
-package com.sidneysimmons.kiwi.environment.domain;
+package com.sidneysimmons.kiwi.service.domain;
 
 import lombok.Data;
 

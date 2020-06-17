@@ -1,6 +1,6 @@
-package com.sidneysimmons.kiwi.environment.service;
+package com.sidneysimmons.kiwi.service;
 
-import com.sidneysimmons.kiwi.environment.domain.ApplicationEnvironment;
+import com.sidneysimmons.kiwi.service.domain.ApplicationEnvironment;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import javax.annotation.PostConstruct;

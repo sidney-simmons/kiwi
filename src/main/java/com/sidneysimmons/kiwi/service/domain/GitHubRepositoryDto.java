@@ -1,5 +1,6 @@
-package com.sidneysimmons.kiwi.github.domain;
+package com.sidneysimmons.kiwi.service.domain;
 
+import com.sidneysimmons.kiwi.dao.domain.GitHubRepository;
 import java.time.Instant;
 import lombok.Data;
 

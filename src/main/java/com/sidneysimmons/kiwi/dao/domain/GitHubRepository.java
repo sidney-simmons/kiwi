@@ -1,4 +1,4 @@
-package com.sidneysimmons.kiwi.github.domain;
+package com.sidneysimmons.kiwi.dao.domain;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Data;

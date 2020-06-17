@@ -1,4 +1,4 @@
-package com.sidneysimmons.kiwi.common.configuration;
+package com.sidneysimmons.kiwi.configuration;
 
 import java.net.URI;
 import java.net.URISyntaxException;
