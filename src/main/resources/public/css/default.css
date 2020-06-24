@@ -10,10 +10,6 @@ body {
     text-decoration: underline;
 }
 
-.break-all {
-    word-break: break-all;
-}
-
 nav {
     margin-bottom: 15px;
 }
@@ -48,9 +44,12 @@ footer {
     border: 1px solid #888888;
 }
 
+.contact-option-item {
+    display: flex;
+    word-break: break-all;
+}
+
 .contact-option-image {
-    float: left; /* Prevents the text on the right side from wrapping underneath the image. */
     max-height: 25px;
-    padding-right: 10px;
-    max-height: 25px;
+    margin-right: 10px;
 }
