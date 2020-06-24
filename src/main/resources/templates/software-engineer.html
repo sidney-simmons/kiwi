@@ -18,7 +18,8 @@
                         <p class="card-text" th:text="${repository.description}"></p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a th:href="@{${repository.htmlUrl}}" th:text="${repository.htmlUrl}"></a></li>
+                        <li class="list-group-item"><a th:href="@{${repository.htmlUrl}}" th:text="${repository.htmlUrl}"
+                            class="js-repository-link"></a></li>
                     </ul>
                     <div class="card-footer">
                         <small class="text-muted js-repository-updated-at" th:attr="data-updated-at=${repository.updatedAt}"

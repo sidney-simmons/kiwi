@@ -5,4 +5,9 @@ $(document).ready(function() {
         let updatedAtDate = moment(updatedAtUtcString);
         $(this).text("Last updated " + updatedAtDate.fromNow());
     });
+
+    // Create GA event when a repository link is clicked
+    $(".js-repository-link").click(function() {
+        triggerGoogleAnalyticsEvent("links", "github-repo-link-clicked", $(this).attr("href"));
+    });
 });
