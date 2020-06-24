@@ -33,7 +33,7 @@ dependencies {
 
 bootJar {
     manifest {
-        attributes "Implementation-Version": project.version
+        attributes "Implementation-Version": "${project.version} (${UUID.randomUUID().toString()})"
     }
 }
 
