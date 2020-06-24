@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Slf4j
 @Controller
-@RequestMapping(value = "software-engineer")
+@RequestMapping(value = "/software-engineer")
 public class SoftwareController {
 
     @Resource(name = "gitHubService")
