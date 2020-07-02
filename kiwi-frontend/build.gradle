@@ -1,0 +1,64 @@
+plugins {
+    id "com.sidneysimmons.gradle-plugin-external-properties"
+    id "com.github.node-gradle.node" version "2.2.3"
+}
+
+task build() {
+    dependsOn "npmBuild"
+    dependsOn "copyToBackend"
+}
+
+task npmBuild(type: NpmTask, dependsOn: ["npmInstall"]) {
+    args = ["run", "build"]
+    
+    // Declare inputs and outputs so this task won't execute unless required
+    inputs.dir("${projectDir}/public")
+    inputs.dir("${projectDir}/src")
+    inputs.file("${projectDir}/package.json")
+    inputs.file("${projectDir}/package-lock.json")
+    inputs.file("${projectDir}/vue.config.js")
+    outputs.dir("${projectDir}/dist")
+}
+
+task copyToBackend() {
+    dependsOn "copyCss"
+    dependsOn "copyImg"
+    dependsOn "copyJs"
+    dependsOn "copyTemplates"
+    dependsOn "copyFavicon"
+}
+
+task copyCss(type: Copy) {
+    from "${projectDir}/dist/css"
+    into "${rootProject.projectDir}/kiwi-backend/src/main/resources/public/css"
+}
+
+task copyImg(type: Copy) {
+    from "${projectDir}/dist/img"
+    into "${rootProject.projectDir}/kiwi-backend/src/main/resources/public/img"
+}
+
+task copyJs(type: Copy) {
+    from "${projectDir}/dist/js"
+    into "${rootProject.projectDir}/kiwi-backend/src/main/resources/public/js"
+}
+
+task copyTemplates(type: Copy) {
+    from "${projectDir}/dist/templates"
+    into "${rootProject.projectDir}/kiwi-backend/src/main/resources/templates"
+}
+
+task copyFavicon(type: Copy) {
+    from "${projectDir}/dist/favicon.ico"
+    into "${rootProject.projectDir}/kiwi-backend/src/main/resources/public"
+}
+
+// Make sure the task order is correct
+copyToBackend.mustRunAfter npmBuild
+npmBuild.mustRunAfter npmInstall
+
+node {
+    version = "12.18.2"
+    npmVersion = "6.14.5"
+    download = true
+}
