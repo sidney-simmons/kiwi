@@ -1,18 +1,18 @@
 module.exports = {
     pages : {
-        about : {
-            entry : 'src/pages/about/about.js',
-            template : 'public/pages/about.html',
-            filename : 'templates/about.html',
-            title : 'About Page',
-            chunks : [ 'chunk-vendors', 'chunk-common', 'about' ]
+        'software-engineer' : {
+            entry : 'src/pages/software-engineer/software-engineer.js',
+            template : 'public/pages/software-engineer.html',
+            filename : 'templates/software-engineer.html',
+            title : 'Sidney Simmons - Software Engineer',
+            chunks : [ 'chunk-vendors', 'chunk-common', 'software-engineer' ]
         },
-        home : {
-            entry : 'src/pages/home/home.js',
-            template : 'public/pages/home.html',
-            filename : 'templates/home.html',
-            title : 'Home Page',
-            chunks : [ 'chunk-vendors', 'chunk-common', 'home' ]
+        'contact' : {
+            entry : 'src/pages/contact/contact.js',
+            template : 'public/pages/contact.html',
+            filename : 'templates/contact.html',
+            title : 'Sidney Simmons - Contact',
+            chunks : [ 'chunk-vendors', 'chunk-common', 'contact' ]
         }
     }
 }
