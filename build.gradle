@@ -7,3 +7,6 @@ group = "com.sidneysimmons.kiwi"
 version = "1.0.0"
 
 task build(dependsOn: [":kiwi-backend:build"])
+
+dockerComposeUp.dependsOn dockerComposeBuild
+dockerComposeBuild.dependsOn build
