@@ -4,7 +4,7 @@ import SoftwareEngineer from './SoftwareEngineer.vue'
 
 // Import CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '../../assets/global.css'
+import '@/assets/global.css'
 
 // Import javascript
 import 'jquery/dist/jquery.min.js'
