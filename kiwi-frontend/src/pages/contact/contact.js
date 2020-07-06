@@ -6,6 +6,11 @@ import Contact from './Contact.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../../assets/global.css'
 
+// Import javascript
+import 'jquery/dist/jquery.min.js'
+import 'popper.js/dist/popper.min.js'
+import 'bootstrap/dist/js/bootstrap.min.js'
+
 Vue.config.productionTip = false
 
 new Vue({
