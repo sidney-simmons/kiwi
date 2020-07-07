@@ -53,5 +53,19 @@ export default {
 </script>
 
 <style scoped>
+.github-profile-pic {
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid #888888;
+}
 
+.contact-option-item {
+    display: flex;
+    word-break: break-all;
+}
+
+.contact-option-image {
+    max-height: 25px;
+    margin-right: 10px;
+}
 </style>
