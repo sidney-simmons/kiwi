@@ -4,8 +4,13 @@ plugins {
 }
 
 task build() {
+    dependsOn "npmFormat"
     dependsOn "npmBuild"
     dependsOn "copyToBackend"
+}
+
+task npmFormat(type: NpmTask, dependsOn: ["npmInstall"]) {
+    args = ["run", "format"]
 }
 
 task npmBuild(type: NpmTask, dependsOn: ["npmInstall"]) {
@@ -55,7 +60,8 @@ task copyFavicon(type: Copy) {
 
 // Make sure the task order is correct
 copyToBackend.mustRunAfter npmBuild
-npmBuild.mustRunAfter npmInstall
+npmBuild.mustRunAfter npmFormat
+npmFormat.mustRunAfter npmInstall
 
 node {
     version = "12.18.2"
