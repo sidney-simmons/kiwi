@@ -8,32 +8,34 @@
 </template>
 
 <script>
-import EnvironmentApi from '@/services/EnvironmentApi.js'
+import EnvironmentApi from "@/services/EnvironmentApi.js";
 
 export default {
-    name: 'Footer',
+    name: "Footer",
     data: function () {
         return {
-            implementationVersion: '...',
-            hostName: '...'
-        }
+            implementationVersion: "...",
+            hostName: "...",
+        };
     },
     mounted: function () {
         this.setEnvironment();
     },
     methods: {
         setEnvironment: function () {
-            EnvironmentApi.getEnvironment().then(response => {
-                this.implementationVersion = response.data.implementationVersion;
-                this.hostName = response.data.hostName;
-            }).catch(error => {
-                console.error(error);
-                this.implementationVersion = 'Unknown';
-                this.hostName = 'Unknown';
-            });
-        }
-    }
-}
+            EnvironmentApi.getEnvironment()
+                .then((response) => {
+                    this.implementationVersion = response.data.implementationVersion;
+                    this.hostName = response.data.hostName;
+                })
+                .catch((error) => {
+                    console.error(error);
+                    this.implementationVersion = "Unknown";
+                    this.hostName = "Unknown";
+                });
+        },
+    },
+};
 </script>
 
 <style scoped>

@@ -1,9 +1,9 @@
-import Axios from 'axios'
+import Axios from "axios";
 
-export default new class {
+export default new (class {
     getEnvironment() {
-        return Axios.get('/environment/get-environment').then(response => {
+        return Axios.get("/environment/get-environment").then((response) => {
             return response;
-        }); 
+        });
     }
-}
+})();

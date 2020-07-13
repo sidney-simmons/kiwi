@@ -6,8 +6,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" :class="currentPage === 'software-engineer' ? 'active' : ''" href="/software-engineer">Software Engineer</a></li>
-                <li class="nav-item"><a class="nav-link" :class="currentPage === 'contact' ? 'active' : ''" href="/contact">Contact</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" :class="currentPage === 'software-engineer' ? 'active' : ''" href="/software-engineer">Software Engineer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" :class="currentPage === 'contact' ? 'active' : ''" href="/contact">Contact</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -15,11 +19,11 @@
 
 <script>
 export default {
-    name: 'NavBar',
+    name: "NavBar",
     props: {
-        currentPage: String
-    }
-}
+        currentPage: String,
+    },
+};
 </script>
 
 <style scoped>

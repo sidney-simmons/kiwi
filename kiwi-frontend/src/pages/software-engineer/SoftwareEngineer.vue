@@ -1,23 +1,21 @@
 <template>
     <div>
-        <NavBar currentPage="software-engineer"/>
-        <Footer/>
+        <NavBar currentPage="software-engineer" />
+        <Footer />
     </div>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
-import Footer from '@/components/Footer.vue'
+import NavBar from "@/components/NavBar.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
-    name: 'SoftwareEngineer',
+    name: "SoftwareEngineer",
     components: {
         NavBar,
-        Footer
-    }
-}
+        Footer,
+    },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

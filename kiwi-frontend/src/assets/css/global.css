@@ -6,7 +6,8 @@ body {
     background-color: #000000 !important;
 }
 
-.underline, .underline:hover {
+.underline,
+.underline:hover {
     text-decoration: underline;
 }
 
