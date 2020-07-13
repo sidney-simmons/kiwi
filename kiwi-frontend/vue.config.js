@@ -15,4 +15,9 @@ module.exports = {
             chunks: ["chunk-vendors", "chunk-common", "contact"],
         },
     },
+    configureWebpack: {
+        performance: {
+            hints: false,
+        },
+    },
 };
