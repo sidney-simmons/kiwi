@@ -1,5 +1,6 @@
 package com.sidneysimmons.kiwi.controller;
 
+import com.sidneysimmons.kiwi.controller.domain.RepositoriesResponse;
 import com.sidneysimmons.kiwi.controller.domain.ViewNames;
 import com.sidneysimmons.kiwi.dao.exception.GitHubDaoException;
 import com.sidneysimmons.kiwi.service.GitHubService;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Software controller.
@@ -48,6 +50,21 @@ public class SoftwareController {
         }
         model.addAttribute("repositories", repositoryDtos);
         return ViewNames.SOFTWARE_ENGINEER;
+    }
+
+    /**
+     * Get the GitHub repositories.
+     * 
+     * @return the repositories
+     * @throws GitHubDaoException thrown if there is a problem getting the repositories
+     */
+    @GetMapping(value = "/get-repositories")
+    public @ResponseBody RepositoriesResponse getRepositories() throws GitHubDaoException {
+        String username = propertyService.getProperty("github.username");
+        List<GitHubRepositoryDto> repositoryDtos = gitHubService.getRepositoriesForUser(username);
+        RepositoriesResponse response = new RepositoriesResponse();
+        response.setRepositories(repositoryDtos);
+        return response;
     }
 
 }

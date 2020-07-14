@@ -1,7 +1,6 @@
 package com.sidneysimmons.kiwi.service.domain;
 
 import com.sidneysimmons.kiwi.dao.domain.GitHubRepository;
-import java.time.Instant;
 import lombok.Data;
 
 /**
@@ -15,7 +14,7 @@ public class GitHubRepositoryDto {
     private String name;
     private String description;
     private String htmlUrl;
-    private Instant updatedAt;
+    private String updatedAt;
 
     /**
      * Constructor to create the DTO from a repository object.
@@ -26,7 +25,7 @@ public class GitHubRepositoryDto {
         this.name = repository.getName();
         this.description = repository.getDescription();
         this.htmlUrl = repository.getHtmlUrl();
-        this.updatedAt = Instant.parse(repository.getUpdatedAt());
+        this.updatedAt = repository.getUpdatedAt();
     }
 
 }
