@@ -2,6 +2,10 @@ body {
     background: #fdfdfd;
 }
 
+image {
+    border-radius: 0.25rem;
+}
+
 .bg-dark {
     background-color: #000000 !important;
 }

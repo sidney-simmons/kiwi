@@ -11,39 +11,35 @@
                         <li class="list-group-item contact-option-item">
                             <img src="@/assets/images/baseline_email_black_18dp.png" class="contact-option-image" />
                             <div class="contact-option-text">
-                                <a href="mailto:sas.simm@gmail.com" class="js-contact-link">sas.simm@gmail.com</a>
+                                <a :href="'mailto:' + emailAddress" class="js-contact-link">{{ emailAddress }}</a>
                             </div>
                         </li>
                         <li class="list-group-item contact-option-item">
                             <img src="@/assets/images/baseline_call_black_18dp.png" class="contact-option-image" />
                             <div class="contact-option-text">
-                                <a href="tel:+256-797-4892" class="js-contact-link">(256) 797-4892</a>
+                                <a :href="phoneNumberHref" class="js-contact-link">{{ phoneNumber }}</a>
                             </div>
                         </li>
                         <li class="list-group-item contact-option-item">
                             <img src="@/assets/images/baseline_place_black_18dp.png" class="contact-option-image" />
-                            <div class="contact-option-text">
-                                Fort Collins, Colorado
-                            </div>
+                            <div class="contact-option-text">{{ location }}</div>
                         </li>
                         <li class="list-group-item contact-option-item">
                             <img src="@/assets/images/baseline_code_black_18dp.png" class="contact-option-image" />
                             <div class="contact-option-text">
-                                <a href="https://github.com/sidney-simmons" class="js-contact-link">https://github.com/sidney-simmons</a>
+                                <a :href="githubProfileUrl" class="js-contact-link">{{ githubProfileUrl }}</a>
                             </div>
                         </li>
                         <li class="list-group-item contact-option-item">
                             <img src="@/assets/images/baseline_work_black_18dp.png" class="contact-option-image" />
                             <div class="contact-option-text">
-                                <a href="https://www.linkedin.com/in/sidney-simmons-446b5b59" class="js-contact-link"
-                                    >https://www.linkedin.com/in/sidney-simmons-446b5b59</a
-                                >
+                                <a :href="linkedinUrl" class="js-contact-link">{{ linkedinUrl }}</a>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-3 margin-bottom">
-                    <img src="https://avatars3.githubusercontent.com/u/22179726?v=4" class="github-profile-pic" />
+                    <img :src="githubPhotoUrl" class="github-profile-pic" />
                 </div>
             </div>
         </main>
@@ -52,6 +48,7 @@
 </template>
 
 <script>
+import PropertyService from "@/services/PropertyService.js";
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 
@@ -60,6 +57,17 @@ export default {
     components: {
         NavBar,
         Footer,
+    },
+    data: function () {
+        return {
+            emailAddress: PropertyService.get("email-address"),
+            phoneNumber: PropertyService.get("phone-number"),
+            phoneNumberHref: PropertyService.get("phone-number-href"),
+            location: PropertyService.get("location"),
+            githubProfileUrl: PropertyService.get("github-profile-url"),
+            githubPhotoUrl: PropertyService.get("github-photo-url"),
+            linkedinUrl: PropertyService.get("linkedin-url"),
+        };
     },
 };
 </script>

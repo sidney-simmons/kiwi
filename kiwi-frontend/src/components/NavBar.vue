@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Sidney Simmons</a>
+        <a class="navbar-brand" href="/">{{ fullName }}</a>
         <button @click="open = !open" class="navbar-toggler" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import PropertyService from "@/services/PropertyService.js";
+
 export default {
     name: "NavBar",
     props: {
@@ -26,6 +28,7 @@ export default {
     data: function () {
         return {
             open: false,
+            fullName: PropertyService.get("full-name"),
         };
     },
 };
