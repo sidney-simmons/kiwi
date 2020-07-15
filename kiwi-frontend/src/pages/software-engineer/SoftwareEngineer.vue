@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import SoftwareApi from "@/services/SoftwareApi.js";
+import SoftwareService from "@/services/SoftwareService.js";
 import GoogleAnalyticsService from "@/services/GoogleAnalyticsService.js";
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
@@ -69,7 +69,7 @@ export default {
             this.loadingRepositories = true;
 
             // Get the repositories
-            SoftwareApi.getRepositories()
+            SoftwareService.getRepositories()
                 .then((response) => {
                     this.repositories = response.data.repositories;
                     this.loadingRepositoriesErrorMessage = null;

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import EnvironmentApi from "@/services/EnvironmentApi.js";
+import EnvironmentService from "@/services/EnvironmentService.js";
 
 export default {
     name: "Footer",
@@ -23,7 +23,7 @@ export default {
     },
     methods: {
         setEnvironment: function () {
-            EnvironmentApi.getEnvironment()
+            EnvironmentService.getEnvironment()
                 .then((response) => {
                     this.implementationVersion = response.data.implementationVersion;
                     this.hostName = response.data.hostName;
