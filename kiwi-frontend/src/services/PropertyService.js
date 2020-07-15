@@ -1,5 +1,4 @@
 import Properties from "@/properties/Properties.js";
-import Axios from "axios";
 
 export default new (class {
     /**

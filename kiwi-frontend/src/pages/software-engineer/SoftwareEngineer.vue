@@ -6,6 +6,12 @@
                 <h2 class="section-title">GitHub Repositories</h2>
             </div>
             <div class="row">
+                <div v-if="loadingRepositories" class="section-container">
+                    <div class="loading-indicator">Loading...</div>
+                </div>
+                <div v-if="loadingRepositoriesErrorMessage" class="alert alert-danger section-container" role="alert">
+                    {{ 'Cannot load repositories: "' + loadingRepositoriesErrorMessage + '"' }}
+                </div>
                 <div
                     v-for="repository in repositories"
                     :key="repository.name"
@@ -49,6 +55,8 @@ export default {
     },
     data: function () {
         return {
+            loadingRepositories: false,
+            loadingRepositoriesErrorMessage: null,
             repositories: [],
         };
     },
@@ -57,13 +65,21 @@ export default {
     },
     methods: {
         setRepositories: function () {
+            // Show loading indicator
+            this.loadingRepositories = true;
+
+            // Get the repositories
             SoftwareApi.getRepositories()
                 .then((response) => {
                     this.repositories = response.data.repositories;
+                    this.loadingRepositoriesErrorMessage = null;
                 })
                 .catch((error) => {
-                    console.error(error);
                     this.repositories = [];
+                    this.loadingRepositoriesErrorMessage = error.message;
+                })
+                .then(() => {
+                    this.loadingRepositories = false;
                 });
         },
         formatLastUpdated: function (updatedAtUtcString) {
@@ -77,4 +93,21 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.loading-indicator {
+    font-style: italic;
+    animation-name: example;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes example {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+</style>

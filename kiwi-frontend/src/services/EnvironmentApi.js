@@ -1,4 +1,4 @@
-import Axios from "axios";
+import Axios from "@/services/AxiosService";
 
 export default new (class {
     /**
