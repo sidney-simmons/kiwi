@@ -1,10 +1,7 @@
 package com.sidneysimmons.kiwi.controller;
 
 import com.sidneysimmons.kiwi.controller.domain.ViewNames;
-import com.sidneysimmons.kiwi.service.PropertyService;
-import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,19 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/contact")
 public class ContactController {
 
-    @Resource(name = "propertyService")
-    private PropertyService propertyService;
-
     /**
      * Return the contact page.
      * 
      * @return the template name
      */
     @GetMapping(value = "")
-    public String contact(Model model) {
-        model.addAttribute("githubProfilePic", propertyService.getProperty("github.profile-pic"));
-        model.addAttribute("githubProfileUrl", propertyService.getProperty("github.profile-url"));
-        model.addAttribute("linkedInProfileUrl", propertyService.getProperty("linked-in.profile-url"));
+    public String contact() {
         return ViewNames.CONTACT;
     }
 
