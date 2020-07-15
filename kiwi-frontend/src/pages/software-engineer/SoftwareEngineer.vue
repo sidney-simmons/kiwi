@@ -18,7 +18,9 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <a :href="repository.htmlUrl" class="js-repository-link">{{ repository.htmlUrl }}</a>
+                                <a :href="repository.htmlUrl" @click="repositoryLinkClicked($event)" class="js-repository-link">{{
+                                    repository.htmlUrl
+                                }}</a>
                             </li>
                         </ul>
                         <div class="card-footer">
@@ -34,6 +36,7 @@
 
 <script>
 import SoftwareApi from "@/services/SoftwareApi.js";
+import GoogleAnalyticsService from "@/services/GoogleAnalyticsService.js";
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 import moment from "moment/dist/moment";
@@ -66,6 +69,9 @@ export default {
         formatLastUpdated: function (updatedAtUtcString) {
             let updatedAtDate = moment(updatedAtUtcString);
             return "Last updated: " + updatedAtDate.fromNow();
+        },
+        repositoryLinkClicked: function (event) {
+            GoogleAnalyticsService.triggerGoogleAnalyticsEvent("links", "github-repo-link-clicked", event.target.href);
         },
     },
 };

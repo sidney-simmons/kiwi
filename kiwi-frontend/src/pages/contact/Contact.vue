@@ -11,13 +11,13 @@
                         <li class="list-group-item contact-option-item">
                             <img src="@/assets/images/baseline_email_black_18dp.png" class="contact-option-image" />
                             <div class="contact-option-text">
-                                <a :href="'mailto:' + emailAddress" class="js-contact-link">{{ emailAddress }}</a>
+                                <a :href="'mailto:' + emailAddress" @click="contactLinkClicked($event)" class="js-contact-link">{{ emailAddress }}</a>
                             </div>
                         </li>
                         <li class="list-group-item contact-option-item">
                             <img src="@/assets/images/baseline_call_black_18dp.png" class="contact-option-image" />
                             <div class="contact-option-text">
-                                <a :href="phoneNumberHref" class="js-contact-link">{{ phoneNumber }}</a>
+                                <a :href="phoneNumberHref" @click="contactLinkClicked($event)" class="js-contact-link">{{ phoneNumber }}</a>
                             </div>
                         </li>
                         <li class="list-group-item contact-option-item">
@@ -27,13 +27,13 @@
                         <li class="list-group-item contact-option-item">
                             <img src="@/assets/images/baseline_code_black_18dp.png" class="contact-option-image" />
                             <div class="contact-option-text">
-                                <a :href="githubProfileUrl" class="js-contact-link">{{ githubProfileUrl }}</a>
+                                <a :href="githubProfileUrl" @click="contactLinkClicked($event)" class="js-contact-link">{{ githubProfileUrl }}</a>
                             </div>
                         </li>
                         <li class="list-group-item contact-option-item">
                             <img src="@/assets/images/baseline_work_black_18dp.png" class="contact-option-image" />
                             <div class="contact-option-text">
-                                <a :href="linkedinUrl" class="js-contact-link">{{ linkedinUrl }}</a>
+                                <a :href="linkedinUrl" @click="contactLinkClicked($event)" class="js-contact-link">{{ linkedinUrl }}</a>
                             </div>
                         </li>
                     </ul>
@@ -49,6 +49,7 @@
 
 <script>
 import PropertyService from "@/services/PropertyService.js";
+import GoogleAnalyticsService from "@/services/GoogleAnalyticsService.js";
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 
@@ -69,13 +70,17 @@ export default {
             linkedinUrl: PropertyService.get("linkedin-url"),
         };
     },
+    methods: {
+        contactLinkClicked: function (event) {
+            GoogleAnalyticsService.triggerGoogleAnalyticsEvent("links", "contact-link-clicked", event.target.href);
+        },
+    },
 };
 </script>
 
 <style scoped>
 .github-profile-pic {
     width: 100%;
-    border-radius: 2px;
     border: 1px solid #888888;
 }
 
