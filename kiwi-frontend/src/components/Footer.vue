@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import EnvironmentService from "@/services/EnvironmentService.js";
+import EnvironmentService from "@/services/EnvironmentService";
 
 export default {
     name: "Footer",

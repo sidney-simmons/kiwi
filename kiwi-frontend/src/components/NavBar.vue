@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import PropertyService from "@/services/PropertyService.js";
+import PropertyService from "@/services/PropertyService";
 
 export default {
     name: "NavBar",

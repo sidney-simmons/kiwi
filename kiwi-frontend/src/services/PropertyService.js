@@ -1,4 +1,4 @@
-import Properties from "@/properties/Properties.js";
+import Properties from "@/properties/Properties";
 
 export default new (class {
     /**

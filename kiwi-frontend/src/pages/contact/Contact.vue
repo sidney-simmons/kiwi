@@ -48,8 +48,8 @@
 </template>
 
 <script>
-import PropertyService from "@/services/PropertyService.js";
-import GoogleAnalyticsService from "@/services/GoogleAnalyticsService.js";
+import PropertyService from "@/services/PropertyService";
+import GoogleAnalyticsService from "@/services/GoogleAnalyticsService";
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 

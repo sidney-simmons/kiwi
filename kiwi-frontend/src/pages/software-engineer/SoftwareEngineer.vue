@@ -41,8 +41,8 @@
 </template>
 
 <script>
-import SoftwareService from "@/services/SoftwareService.js";
-import GoogleAnalyticsService from "@/services/GoogleAnalyticsService.js";
+import SoftwareService from "@/services/SoftwareService";
+import GoogleAnalyticsService from "@/services/GoogleAnalyticsService";
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 import moment from "moment/dist/moment";
