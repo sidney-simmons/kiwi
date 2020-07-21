@@ -1,1 +1,3 @@
 rootProject.name = 'kiwi'
+include 'kiwi-backend'
+include 'kiwi-frontend'
