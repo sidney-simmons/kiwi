@@ -1,6 +1,6 @@
 # kiwi
 
-kiwi is a java web application meant to act as my personal portfolio. It pulls a list of my current public GitHub repositories and displays them in a bootstrap grid format in the browser.
+kiwi is a java/vue web application meant to act as my personal portfolio. It pulls a list of my current public GitHub repositories and displays them in a bootstrap grid format in the browser.
 
 ## Running locally
 
