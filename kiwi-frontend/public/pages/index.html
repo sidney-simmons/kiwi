@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.googleAnalyticsId %>" async="true"></script>
+        <script
+            src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.customObject['google-analytics-id'] %>"
+            async="true"
+        ></script>
         <script th:inline="text">
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 dataLayer.push(arguments);
             }
             gtag("js", new Date());
-            gtag("config", "<%= htmlWebpackPlugin.options.googleAnalyticsId %>");
+            gtag("config", "<%= htmlWebpackPlugin.options.customObject['google-analytics-id'] %>");
         </script>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta name="author" content="<%= htmlWebpackPlugin.options.customObject['full-name'] %>" />
+        <meta name="description" content="<%= htmlWebpackPlugin.options.description %>" />
+        <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>" />
         <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
         <title><%= htmlWebpackPlugin.options.title %></title>
     </head>

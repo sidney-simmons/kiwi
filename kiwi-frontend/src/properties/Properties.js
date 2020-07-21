@@ -1,3 +1,4 @@
+// Some of the properties here can be a duplicate of what's in "vue.config.js" - please keep them in sync!
 export default {
     "full-name": "Sidney Simmons",
     "email-address": "sas.simm@gmail.com",
