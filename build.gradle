@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.sidneysimmons.kiwi"
-version = "1.0.0"
+version = "1.1.0"
 
 task build(dependsOn: [":kiwi-backend:build"])
 
