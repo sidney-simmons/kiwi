@@ -20,4 +20,10 @@ public class GitHubRepository {
     @JsonAlias("updated_at")
     private String updatedAt;
 
+    @JsonAlias("archived")
+    private Boolean archivedFlag;
+
+    @JsonAlias("private")
+    private Boolean privateFlag;
+
 }
