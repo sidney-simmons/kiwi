@@ -7,8 +7,11 @@ kiwi is a java/vue web application meant to act as my personal portfolio. It pul
 Clone the repository and execute the following.  The application runs on port 8080.
 
 ```
-// Uses the docker-compose.yml file to start the application
-./gradlew dockerComposeUp
+// Build the code
+./gradlew build
+
+// Start the application
+docker-compose up --build
 ```
 
 You can view the service logs by running the following.
