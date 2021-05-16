@@ -12,5 +12,6 @@ public class ApplicationEnvironment {
 
     private String implementationVersion;
     private String hostName;
+    private String upTime;
 
 }
