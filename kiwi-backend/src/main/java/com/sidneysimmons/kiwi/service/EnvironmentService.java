@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * Environment service.
- * 
- * @author Sidney Simmons
  */
 @Slf4j
 @Service("environmentService")

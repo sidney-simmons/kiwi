@@ -14,8 +14,6 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * GitHub DAO for interacting with the API.
- * 
- * @author Sidney Simmons
  */
 @Service("gitHubApiDao")
 public class GitHubApiDao {

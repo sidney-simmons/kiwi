@@ -7,8 +7,6 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * Common configuration.
- * 
- * @author Sidney Simmons
  */
 @Configuration
 public class CommonConfiguration {

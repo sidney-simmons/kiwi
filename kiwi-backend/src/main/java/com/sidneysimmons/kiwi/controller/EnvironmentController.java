@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Environment controller.
- * 
- * @author Sidney Simmons
  */
 @RestController
 @RequestMapping(value = "/environment")

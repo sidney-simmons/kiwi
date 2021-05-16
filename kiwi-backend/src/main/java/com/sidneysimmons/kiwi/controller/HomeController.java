@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Home controller.
- * 
- * @author Sidney Simmons
  */
 @Controller
 @RequestMapping(value = "")

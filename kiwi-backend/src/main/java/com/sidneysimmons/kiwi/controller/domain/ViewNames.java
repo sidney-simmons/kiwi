@@ -2,8 +2,6 @@ package com.sidneysimmons.kiwi.controller.domain;
 
 /**
  * Class to hold view names.
- * 
- * @author Sidney Simmons
  */
 public class ViewNames {
 

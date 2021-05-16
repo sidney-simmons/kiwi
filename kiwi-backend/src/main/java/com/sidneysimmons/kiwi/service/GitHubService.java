@@ -13,8 +13,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * GitHub service.
- * 
- * @author Sidney Simmons
  */
 @Slf4j
 @Service("gitHubService")

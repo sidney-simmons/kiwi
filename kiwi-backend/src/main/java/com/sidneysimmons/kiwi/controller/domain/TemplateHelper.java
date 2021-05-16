@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * Template helper.
- * 
- * @author Sidney Simmons
  */
 @Service("th")
 public class TemplateHelper {
