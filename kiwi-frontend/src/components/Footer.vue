@@ -3,7 +3,7 @@
         <div>
             <div>Application version: {{ implementationVersion }}</div>
             <div>Node: {{ hostName }}</div>
-            <div>{{ formatUpTime(upTime) }}</div>
+            <div>Up time: {{ formatUpTime(upTime) }}</div>
         </div>
     </footer>
 </template>
@@ -40,8 +40,17 @@ export default {
                 });
         },
         formatUpTime: function (upTimeString) {
-            let upTimeDate = moment(upTimeString);
-            return "Up time: " + upTimeDate.fromNow(true);
+            if (upTimeString === "...") {
+                // The environment data hasn't been pulled from the API yet
+                return "...";
+            } else {
+                let upTimeDate = moment(upTimeString);
+                if (upTimeDate.isValid()) {
+                    return upTimeDate.fromNow(true);
+                } else {
+                    return "Unknown";
+                }
+            }
         },
     },
 };
