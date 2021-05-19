@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * Property service.
- * 
- * @author Sidney Simmons
  */
 @Service("propertyService")
 public class PropertyService {

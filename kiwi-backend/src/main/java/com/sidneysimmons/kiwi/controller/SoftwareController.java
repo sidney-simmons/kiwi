@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Software controller.
- * 
- * @author Sidney Simmons
  */
 @Controller
 @RequestMapping(value = "/software-engineer")

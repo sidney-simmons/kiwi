@@ -7,8 +7,6 @@ import lombok.Data;
 
 /**
  * List of GitHub repository DTO's.
- * 
- * @author Sidney Simmons
  */
 @Data
 public class RepositoriesResponse {

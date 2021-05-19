@@ -5,8 +5,6 @@ import lombok.Data;
 
 /**
  * GitHub repository object.
- * 
- * @author Sidney Simmons
  */
 @Data
 public class GitHubRepository {
@@ -19,5 +17,11 @@ public class GitHubRepository {
 
     @JsonAlias("updated_at")
     private String updatedAt;
+
+    @JsonAlias("archived")
+    private Boolean archivedFlag;
+
+    @JsonAlias("private")
+    private Boolean privateFlag;
 
 }

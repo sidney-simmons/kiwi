@@ -5,8 +5,6 @@ import lombok.Data;
 
 /**
  * GitHub repository DTO object.
- * 
- * @author Sidney Simmons
  */
 @Data
 public class GitHubRepositoryDto {

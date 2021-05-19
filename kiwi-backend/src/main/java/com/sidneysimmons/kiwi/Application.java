@@ -5,8 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Entry point to the application!
- * 
- * @author Sidney Simmons
  */
 @SpringBootApplication
 public class Application {

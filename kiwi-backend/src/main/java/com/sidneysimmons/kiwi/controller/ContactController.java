@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Contact controller.
- * 
- * @author Sidney Simmons
  */
 @Controller
 @RequestMapping(value = "/contact")

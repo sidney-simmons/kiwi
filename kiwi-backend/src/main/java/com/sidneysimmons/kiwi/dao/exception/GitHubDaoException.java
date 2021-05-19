@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
  * GitHub DAO exception.
- * 
- * @author Sidney Simmons
  */
 @ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR, reason = "Cannot communicate with the GitHub API.")
 public class GitHubDaoException extends Exception {

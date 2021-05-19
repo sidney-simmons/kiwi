@@ -13,8 +13,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * GitHub service.
- * 
- * @author Sidney Simmons
  */
 @Slf4j
 @Service("gitHubService")
@@ -36,10 +34,22 @@ public class GitHubService {
         List<GitHubRepository> repositories = gitHubApiDao.getRepositoriesForUser(username);
         List<GitHubRepositoryDto> repositoryDtos = new ArrayList<>();
         for (GitHubRepository repository : repositories) {
-            repositoryDtos.add(new GitHubRepositoryDto(repository));
+            if (shouldShowRepository(repository)) {
+                repositoryDtos.add(new GitHubRepositoryDto(repository));
+            }
         }
         return repositoryDtos;
+    }
 
+    /**
+     * Check if the repository should be shown. Currently we show all repositories that aren't private
+     * and/or archived.
+     * 
+     * @param repository the repository
+     * @return true if the repository should be shown, false otherwise
+     */
+    private Boolean shouldShowRepository(GitHubRepository repository) {
+        return !repository.getPrivateFlag() && !repository.getArchivedFlag();
     }
 
 }

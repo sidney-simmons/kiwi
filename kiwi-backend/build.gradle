@@ -8,8 +8,6 @@ repositories {
     mavenCentral()
 }
 
-group = "com.sidneysimmons.kiwi.backend"
-version = "1.1.0"
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
@@ -33,6 +31,7 @@ dependencies {
 }
 
 bootJar {
+    archiveFileName = "kiwi.jar"
     manifest {
         attributes "Implementation-Version": project.version
     }
